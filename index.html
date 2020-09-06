@@ -192,32 +192,9 @@
 <h2 id="查看IP"><a href="#查看IP" class="headerlink" title="查看IP"></a>查看IP</h2><p>ip addr</p>
 <h2 id="查看当前时间"><a href="#查看当前时间" class="headerlink" title="查看当前时间"></a>查看当前时间</h2><p>date</p>
 <h2 id="设置当前时间"><a href="#设置当前时间" class="headerlink" title="设置当前时间"></a>设置当前时间</h2><p>date -s “2020-09-24 12:00:00”<br>把时间设置为2020年9月24日12点整</p>
-<h2 id="获取网上时间"><a href="#获取网上时间" class="headerlink" title="获取网上时间"></a>获取网上时间</h2><p>cp /share/zoneinfo/Asia/Shanghai/etc/localtime</p>
-<h2 id="清屏"><a href="#清屏" class="headerlink" title="清屏"></a>清屏</h2><p>clear</p>
-<h2 id="查看当前目录"><a href="#查看当前目录" class="headerlink" title="查看当前目录"></a>查看当前目录</h2><p>pwd</p>
-<h2 id="改变当前目录"><a href="#改变当前目录" class="headerlink" title="改变当前目录"></a>改变当前目录</h2><p>cd /目录名 进入目录<br>cd .. 进入上一级目录<br>cd 进入主目录</p>
-<h2 id="列出目录和文件信息"><a href="#列出目录和文件信息" class="headerlink" title="列出目录和文件信息"></a>列出目录和文件信息</h2><p>ls<br>ls -l（更详细）<br>ls /目录</p>
-<h2 id="创建目录"><a href="#创建目录" class="headerlink" title="创建目录"></a>创建目录</h2><h3 id="在当前工作目录下创建aaa目录。"><a href="#在当前工作目录下创建aaa目录。" class="headerlink" title="在当前工作目录下创建aaa目录。"></a>在当前工作目录下创建aaa目录。</h3><p>mkdir aaa</p>
-<h3 id="在当前工作目录的aaa目录下创建bbb目录。"><a href="#在当前工作目录的aaa目录下创建bbb目录。" class="headerlink" title="在当前工作目录的aaa目录下创建bbb目录。"></a>在当前工作目录的aaa目录下创建bbb目录。</h3><p>mkdir aaa/bbb</p>
-<h3 id="创建-tmp-aaa目录。"><a href="#创建-tmp-aaa目录。" class="headerlink" title="创建/tmp/aaa目录。"></a>创建/tmp/aaa目录。</h3><p>mkdir /tmp/aaa</p>
-<h2 id="删除目录或文件"><a href="#删除目录或文件" class="headerlink" title="删除目录或文件"></a>删除目录或文件</h2><p>rm<br>选项-r可以删除目录，如果没有-r只能删除文件。<br>选项-f表示强制删除，不需要确认。</p>
-<h2 id="移动目录和文件"><a href="#移动目录和文件" class="headerlink" title="移动目录和文件"></a>移动目录和文件</h2><p>mv 旧目录或文件名 新目录或文件名</p>
-<h2 id="复制目录或文件"><a href="#复制目录或文件" class="headerlink" title="复制目录或文件"></a>复制目录或文件</h2><p>cp 旧目录或文件名 新目录或文件名<br>选项-r可以复制目录，如果没有选项-r只能复制文件。</p>
-<h2 id="打包压缩和解包解压"><a href="#打包压缩和解包解压" class="headerlink" title="打包压缩和解包解压"></a>打包压缩和解包解压</h2><h3 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h3><p>tar zcvf 压缩包文件名 想压缩的目录或文件名列表</p>
-<h3 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h3><p>tar zxvf 压缩包文件名 目标解压位置</p>
-<h2 id="ping"><a href="#ping" class="headerlink" title="ping"></a>ping</h2><p>ping -c ip地址</p>
-<h2 id="显示文本"><a href="#显示文本" class="headerlink" title="显示文本"></a>显示文本</h2><h3 id="cat-文件-（完整显示）"><a href="#cat-文件-（完整显示）" class="headerlink" title="cat 文件 （完整显示）"></a>cat 文件 （完整显示）</h3><h3 id="more-文件-（分页显示）"><a href="#more-文件-（分页显示）" class="headerlink" title="more 文件 （分页显示）"></a>more 文件 （分页显示）</h3><h3 id="tail-f-文件-（动态更新）"><a href="#tail-f-文件-（动态更新）" class="headerlink" title="tail -f 文件 （动态更新）"></a>tail -f 文件 （动态更新）</h3><h2 id="统计文本文件的行数、单词数和字节数"><a href="#统计文本文件的行数、单词数和字节数" class="headerlink" title="统计文本文件的行数、单词数和字节数"></a>统计文本文件的行数、单词数和字节数</h2><p>wc 文件</p>
-<h2 id="搜索内容"><a href="#搜索内容" class="headerlink" title="搜索内容"></a>搜索内容</h2><p>grep 要搜索内容 文件</p>
-<h2 id="搜索文件"><a href="#搜索文件" class="headerlink" title="搜索文件"></a>搜索文件</h2><p>find 目录名 -name 文件名 -print</p>
-<h2 id="增加用户组"><a href="#增加用户组" class="headerlink" title="增加用户组"></a>增加用户组</h2><p>groupadd 组名</p>
-<h2 id="删除用户组"><a href="#删除用户组" class="headerlink" title="删除用户组"></a>删除用户组</h2><p>groupdel 组名</p>
-<h2 id="增加用户"><a href="#增加用户" class="headerlink" title="增加用户"></a>增加用户</h2><p>useradduseradd -n 用户名 -g 组名 -d 用户的主目录</p>
-<h2 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h2><p>userdel 用户名</p>
-<h2 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h2><p>普通用户自己输入 passwd<br>管理员可输入 passwd 用户 修改其他用户密码</p>
-<h2 id="切换用户"><a href="#切换用户" class="headerlink" title="切换用户"></a>切换用户</h2><p>su - 用户名</p>
-<h2 id="修改目录和文件的主人和组"><a href="#修改目录和文件的主人和组" class="headerlink" title="修改目录和文件的主人和组"></a>修改目录和文件的主人和组</h2><p>chown [-R] 用户名:组名 目录或文件名列表<br>-R 选项表示处理各及子目录。</p>
-<h2 id="查看系统磁盘空间"><a href="#查看系统磁盘空间" class="headerlink" title="查看系统磁盘空间"></a>查看系统磁盘空间</h2><p>df [-h] [-T]<br>选项-h 以方便阅读的方式显示信息。<br>选项-T 列出文件系统类型。</p>
-<h6 id="参考资料https-freecplus-net-94103ae45b9048a7a60b6aca31f57a41-html"><a href="#参考资料https-freecplus-net-94103ae45b9048a7a60b6aca31f57a41-html" class="headerlink" title="参考资料https://freecplus.net/94103ae45b9048a7a60b6aca31f57a41.html"></a>参考资料<a target="_blank" rel="noopener" href="https://freecplus.net/94103ae45b9048a7a60b6aca31f57a41.html">https://freecplus.net/94103ae45b9048a7a60b6aca31f57a41.html</a></h6>
+        
+          <a class="article-more-a" href="/2020/09/06/Linux%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/#more">more >></a>
+        
       
 
       
@@ -283,35 +260,9 @@
         <h1 id="DOS浅谈"><a href="#DOS浅谈" class="headerlink" title="DOS浅谈"></a>DOS浅谈</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>DOS是磁盘操作系统（Disk Operating System）的缩写。掌握DOS便能对软硬件资源进行合理调度。</p>
 <h2 id="DOS命令"><a href="#DOS命令" class="headerlink" title="DOS命令"></a>DOS命令</h2><h3 id="cd（change-directory）"><a href="#cd（change-directory）" class="headerlink" title="cd（change directory）"></a>cd（change directory）</h3><p>即改变目录亦可缩写为chdir 作用是改变当前目录</p>
 <h4 id="更改当前目录"><a href="#更改当前目录" class="headerlink" title="更改当前目录"></a>更改当前目录</h4><p>cd/d +路径<br>例如 cd/d D:/test 则直接进入D盘中的test文件夹。</p>
-<h4 id="进入下一层目录"><a href="#进入下一层目录" class="headerlink" title="进入下一层目录"></a>进入下一层目录</h4><p>cd +路径<br>cd ./+路径<br>需要注意的是此命令是进入当前文件所属的下一个文件夹，而第一个则是可以转到任何文件</p>
-<h3 id="dir-（directory）"><a href="#dir-（directory）" class="headerlink" title="dir （directory）"></a>dir （directory）</h3><p>即显示文件夹中文件和子目录</p>
-<h4 id="查看文件列表"><a href="#查看文件列表" class="headerlink" title="查看文件列表"></a>查看文件列表</h4><p>dir<br>dir +路径</p>
-<h4 id="使用参数"><a href="#使用参数" class="headerlink" title="使用参数"></a>使用参数</h4><p>/w 宽屏显示<br>/ad 只显示目录<br>/on 按字母排序  </p>
-<h5 id="a-显示具有指定属性的文件"><a href="#a-显示具有指定属性的文件" class="headerlink" title="/a 显示具有指定属性的文件"></a>/a 显示具有指定属性的文件</h5><p>格式  /a：属性<br>属性：<br>D  目录           R  只读文件<br>               H  隐藏文件            A  准备存档的文件<br>               S  系统文件            I  无内容索引文件<br>               L  重新分析点          O  脱机文件</p>
-<h3 id="tree"><a href="#tree" class="headerlink" title="tree"></a>tree</h3><p>顾名思义，以一棵树的形式显示文件</p>
-<h3 id="subst"><a href="#subst" class="headerlink" title="subst"></a>subst</h3><p>将一个目录映射为一个虚拟驱动器</p>
-<h4 id="映射"><a href="#映射" class="headerlink" title="映射"></a>映射</h4><p>subst +要映射的驱动器名字 +路径</p>
-<h4 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h4><p>subst</p>
-<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><p>subst +要删除的驱动器名字 /d</p>
-<h3 id="attrib"><a href="#attrib" class="headerlink" title="attrib"></a>attrib</h3><p>查看，修改，去除文件属性<br>+r 设置只读属性</p>
-<p>-r 取消只读属性</p>
-<p>+a 设置存档属性</p>
-<p>-a 取消存档属性</p>
-<p>+s 设置系统属性</p>
-<p>-s 取消系统属性</p>
-<p>+h 设置隐藏属性</p>
-<p>-h 取消隐藏属性</p>
-<p>/s 显示目录下所有文件的属性</p>
-<p>/d 将attrib和任意命令行选项应用到目录</p>
-<h3 id="md"><a href="#md" class="headerlink" title="md"></a>md</h3><p>创建目录或子目录<br>例：md text1\text2 即可在当前位置创建多级子目录</p>
-<h3 id="rd"><a href="#rd" class="headerlink" title="rd"></a>rd</h3><p>删除目录<br>/s 删除目录所有文件<br>/q 安静删除无需确认</p>
-<h3 id="move"><a href="#move" class="headerlink" title="move"></a>move</h3><p>重命名文件或移动文件</p>
-<h4 id="重命名"><a href="#重命名" class="headerlink" title="重命名"></a>重命名</h4><p>move 路径/原名 新名</p>
-<h4 id="移动文件"><a href="#移动文件" class="headerlink" title="移动文件"></a>移动文件</h4><p>move 原路径 新路径</p>
-<h4 id="批量处理"><a href="#批量处理" class="headerlink" title="批量处理"></a>批量处理</h4><p>如 move C：\test*.txt D:\test<br>即把所有后缀是txt文件全部移动到另一文件夹<br>*.txt则表示所有后缀是txt的文件</p>
-<h3 id="ren"><a href="#ren" class="headerlink" title="ren"></a>ren</h3><p>更改文件名<br>ren 路径/原名 新名<br>批量处理如上</p>
-<h3 id="type"><a href="#type" class="headerlink" title="type"></a>type</h3><p>查看文件<br>type 路径/文件名 （貌似只能查看txt文件）</p>
-
+        
+          <a class="article-more-a" href="/2020/08/06/DOS%E6%B5%85%E8%B0%88/#more">more >></a>
+        
       
 
       
