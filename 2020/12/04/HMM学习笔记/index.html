@@ -6,15 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | 林月初的博客</title>
+  <title>HMM学习笔记 | 林月初的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="林月初的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="HMM学习笔记前言&amp;#8195; 因笔者在亚太数学建模中遇到了经济预测问题，于是学习了HMM（Hidden Markov Model隐马尔可夫模型）。因此记录学习笔记，方便以后继续使用。 简介&amp;#8195; 隐马尔科夫模型是机器学习模型中的一种，是根据已知状态序列，对未知状态的预测。所以使用隐马尔科夫模型有两个条件：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HMM学习笔记">
+<meta property="og:url" content="http://yoursite.com/2020/12/04/HMM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="林月初的博客">
+<meta property="og:description" content="HMM学习笔记前言&amp;#8195; 因笔者在亚太数学建模中遇到了经济预测问题，于是学习了HMM（Hidden Markov Model隐马尔可夫模型）。因此记录学习笔记，方便以后继续使用。 简介&amp;#8195; 隐马尔科夫模型是机器学习模型中的一种，是根据已知状态序列，对未知状态的预测。所以使用隐马尔科夫模型有两个条件：">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s3.ax1x.com/2020/12/04/DqM260.png">
+<meta property="og:image" content="https://s3.ax1x.com/2020/12/04/DqMrkQ.png">
+<meta property="og:image" content="https://s3.ax1x.com/2020/12/04/DqMfmT.png">
+<meta property="og:image" content="https://s3.ax1x.com/2020/12/04/DqMfmT.png">
+<meta property="article:published_time" content="2020-12-04T10:50:26.000Z">
+<meta property="article:modified_time" content="2020-12-04T13:07:46.959Z">
 <meta property="article:author" content="林月初">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s3.ax1x.com/2020/12/04/DqM260.png">
   
     <link rel="alternative" href="/atom.xml" title="林月初的博客" type="application/atom+xml">
   
@@ -164,134 +173,211 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-HMM学习笔记" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      HMM学习笔记
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
+
+        
+        
+	<!-- 不蒜子统计 -->
+	<span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+		  <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
 <a href="/2020/12/04/HMM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
   	<time datetime="2020-12-04T10:50:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-04</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/12/04/HMM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">HMM学习笔记</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="HMM学习笔记"><a href="#HMM学习笔记" class="headerlink" title="HMM学习笔记"></a>HMM学习笔记</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&#8195; 因笔者在亚太数学建模中遇到了经济预测问题，于是学习了HMM（Hidden Markov Model隐马尔可夫模型）。因此记录学习笔记，方便以后继续使用。</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>&#8195; 隐马尔科夫模型是机器学习模型中的一种，是根据已知状态序列，对未知状态的预测。所以使用隐马尔科夫模型有两个条件：  </p>
+<a id="more"></a>
+<p>1.问题是基于序列的，比如时间序列，或者状态序列<br/><br>2.问题中有两类数据，一类序列数据是可以观测到的，即观测序列；而另一类数据是不能观察到的，即隐藏状态序列，简称状态序列</br></p>
+<h2 id="参数定义"><a href="#参数定义" class="headerlink" title="参数定义"></a>参数定义</h2><p>&#8195;<br>假设Q是所有可能的隐藏状态的集合，V是所有可能的观测状态的集合，即：</p>
+<center>Q={ q<sub>1</sub>,q<sub>2</sub>,q<sub>3</sub>……q<sub>N</sub>}</center>
+<center>V={ v<sub>1</sub>,v<sub>2</sub>,v<sub>3</sub>……v<sub>M</sub>}</center>
+N是可能的隐藏状态数量,M是所有的可能的观察状态数量
+</br>而对于一个长度为T的序列,I对应的是状态序列,O是对应的观察序列，即：<br/>
+<center>I={ i<sub>1</sub>,i<sub>2</sub>,i<sub>3</sub>……i<sub>T</sub>}i<sub>t</sub>&isin;Q</center>
+<center>O={ o<sub>1</sub>,o<sub>2</sub>,o<sub>3</sub>……o<sub>T</sub>}o<sub>t</sub>&isin;V</center>
+如果在时刻t的隐藏状态是i<sub>t</sub>=q<sub>i</sub> ，在时刻t+1的隐藏状态是i<sub>t+1</sub>=q<sub>j</sub>，则从时刻 t 到时刻 t+1 的HMM状态转移概率a<sub>ij</sub>可以表示为：
+<center>a<sub>ij</sub>=P(i<sub>t+1</sub>=q<sub>j</sub>|i<sub>t</sub>=q<sub>i</sub>)</center>
+a<sub>ij</sub>构成状态转移矩阵A
+<center>A=[a<sub>ij</sub>]<sub>N*N</sub></center>
+任意时刻的观察状态只仅仅依赖于当前时刻的隐藏状态，这也是一个为了简化模型的假设。如果在时刻t的隐藏状态是i<sub>t</sub>=q<sub>j</sub>，而对应的观察状态为o<sub>t</sub>=v<sub>k</sub> ，则该时刻观察状态 v<sub>k</sub>在隐藏状态 q<sub>j</sub>下生成的概率b<sub>j</sub> (k)满足：
+<center>B=[B<sub>j</sub>(K)]<sub>N*M</sub></center>
+与此同时我们还需要一组在时刻 t=1的隐藏状态概率分布序列π
+<center>π(i)=P(i<sub>1</sub>=q<sub>i</sub>)</center>
+此时，我们的前置工作已经完成    
 
-        <div class="article-info info-on-right">
-          
-          
+<h2 id="实际问题解决步骤"><a href="#实际问题解决步骤" class="headerlink" title="实际问题解决步骤"></a>实际问题解决步骤</h2><p>&#8195;在实际解决问题中，我们往往只知道观察序列，而我们的目的则是求出下一步的概率，所以我们步骤大概分为两步：先由已知观察序列推出A，B概率两个矩阵和π序列，再由这些参数推测下一步的概率及期望。</p>
+<h3 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h3><p>1.初始化A，B概率两个矩阵和π序列。（注意A矩阵行列相加都是1，B矩阵行相加为1，π序列相加和为1）<br><br/><br>2.定义新参数</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/DqM260"><img src="https://s3.ax1x.com/2020/12/04/DqM260.png" alt="DqM260.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/DqMrkQ"><img src="https://s3.ax1x.com/2020/12/04/DqMrkQ.png" alt="DqMrkQ.png"></a><br>3.进行迭代运算<br><a target="_blank" rel="noopener" href="https://imgchr.com/i/DqMfmT"><img src="https://s3.ax1x.com/2020/12/04/DqMfmT.png" alt="DqMfmT.png"></a></p>
+<h3 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h3><p><a target="_blank" rel="noopener" href="https://imgchr.com/i/DqMfmT"><img src="https://s3.ax1x.com/2020/12/04/DqMfmT.png" alt="DqMfmT.png"></a></p>
+<h2 id="后言"><a href="#后言" class="headerlink" title="后言"></a>后言</h2><p>&#8195;因笔者时间有限，能力有限，文章有所纰漏在所难免。对于实际问题求解，很多证明笔者也并没有给出。文章图片多来于网络，望各位海涵。（本文学习于 <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/29938926">https://zhuanlan.zhihu.com/p/29938926</a> 。）</p>
 
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>您的每一次赞赏都是我前进的动力<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zfb.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wx.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/12/04/HMM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/09/06/Linux%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" class="archive-article-date">
-  	<time datetime="2020-09-06T11:02:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-06</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/09/06/Linux%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Linux系统基础命令</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/06/Linux%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/">Linux系统基础命令</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HMM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">HMM学习笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">1.2.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E5%AE%9A%E4%B9%89"><span class="toc-number">1.3.</span> <span class="toc-text">参数定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%99%85%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.4.</span> <span class="toc-text">实际问题解决步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5"><span class="toc-number">1.4.1.</span> <span class="toc-text">第一步</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5"><span class="toc-number">1.4.2.</span> <span class="toc-text">第二步</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E8%A8%80"><span class="toc-number">1.5.</span> <span class="toc-text">后言</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/06/DOS%E6%B5%85%E8%B0%88/" class="archive-article-date">
-  	<time datetime="2020-08-06T10:20:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-06</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/06/DOS%E6%B5%85%E8%B0%88/">DOS浅谈</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/01/%E5%8D%83%E9%87%8C%E4%B9%8B%E8%A1%8C-%E5%A7%8B%E4%BA%8E%E8%B6%B3%E4%B8%8B/" class="archive-article-date">
-  	<time datetime="2020-08-01T06:04:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/01/%E5%8D%83%E9%87%8C%E4%B9%8B%E8%A1%8C-%E5%A7%8B%E4%BA%8E%E8%B6%B3%E4%B8%8B/">千里之行 始于足下</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -327,8 +413,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
